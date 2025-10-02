@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, Navigate } from 'react-router-dom';
 import UserRegister from '../pages/auth/UserRegister';
 import ChooseRegister from '../pages/auth/ChooseRegister';
 import UserLogin from '../pages/auth/UserLogin';
@@ -20,7 +20,7 @@ const AppRoutes = () => {
                 <Route path="/user/login" element={<UserLogin />} />
                 <Route path="/food-partner/register" element={<FoodPartnerRegister />} />
                 <Route path="/food-partner/login" element={<FoodPartnerLogin />} />
-                <Route path="/" element={<><Home /><BottomNav /></>} />
+                <Route path="/" element={<Navigate to="/register" replace />} />
                 <Route path="/saved" element={<><Saved /><BottomNav /></>} />
                 <Route path="/create-food" element={<CreateFood />} />
                 <Route path="/food-partner/:id" element={<Profile />} />
